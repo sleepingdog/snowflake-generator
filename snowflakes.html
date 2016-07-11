@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Snowflake Generator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body onLoad="draw();">
+<h1>Snowflake Generator</h1>
+<ul>
+  <li>Status: working prototype</li>
+  <li>Rules:
+    <ul>
+      <li>more humid, more branching</li>
+      <li>rougher surface, faster growth</li>
+    </ul>
+  </li>
+  <li>Last modified:
+    <time>2016-07-11</time>
+  </li>
+</ul>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="snowysky"
+  x="0px" y="0px" viewBox="0 0 800 460" xml:space="preserve"> 
+  <!-- id="device" style="enable-background:new 0 0 400 460;" -->
+  <defs>
+    <style type="text/css"><![CDATA[
+					rect.sky{fill:url(#sky)}
+          .snow { fill: #FFFFFF; stroke: #6666FF; stroke-opacity: 0.5; stroke-width: 1; }	
+					g.snow {animation: spin 30s linear infinite;}
+					@keyframes spin {
+					0% {
+						transform-origin: rotate(0deg);
+					}
+					25% {
+						transform-origin: rotate(90deg);
+					}
+					50% {
+						transform-origin: rotate(180deg);
+					}
+					75% {
+						transform-origin: rotate(270deg);
+					}
+					100% {
+						transform-origin: rotate(360deg);
+					}
+				}
+    ]]></style>
+    <defs>
+      <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0000CC" />
+        <stop offset="100%" stop-color="#FFFFCC" />
+      </linearGradient>
+      <g id="hexagon"> 
+        <!--<path transform="translate(-288.57199,-488.75131)"
+       d="M 505.7143,489.50507 399.61723,678.98487 182.47437,681.84201 71.428586,495.21936 177.52566,305.73956 394.66851,302.88241 Z" />-->
+        <polygon class="snow" points="1.8,-3.1 3.6,0 1.8,3.1 -1.8,3.1 -3.6,0 -1.8,-3.1 		"/>
+        <!--<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" additive="sum" begin="0s" dur="90" fill="freeze" />-->
+      </g	>
+      <g id="arm">
+        <polygon id="shape1" class="snow" points="0,-12 1,-6 0,0 -1,-6 		"/>
+        <polygon id="shape2" class="snow" points="1.5,-3.6 5,-5 1.5,-6.4 0,-11 -1.5,-6.4 -5,-5 -1.5,-3.6 0,1 		"/>
+        <polygon id="shape3" class="snow" points="3.2,-10.5 6.3,-5 3.2,0.5 -3.2,0.5 -6.3,-5 -3.2,-10.5 		"/>
+        <polygon id="shape4" class="snow" points="3.1,-3.6 10,-5 3.1,-6.4 0,-11 -3.1,-6.4 -10,-5 -3.1,-3.6 0,1 		"/>
+        <polygon id="shape5" class="snow" points="-5.5,-8.2 0,-11.4 5.5,-8.2 5.5,-1.8 0,1.4 -5.5,-1.8 		"/>
+        <polygon id="shape6" class="snow" points="2.9,-1.9 13,-5 2.9,-8.1 0,-11 -2.9,-8.1 -13,-5 -2.9,-1.9 0,1 		"/>
+        <polygon id="shape7" class="snow" points="19,-5 11,-10 5.7,-6.7 0,-11 -5.7,-6.7 -11,-10 -19,-5 -11,0 -5.7,-3.3 0,1 5.7,-3.3 
+        11,0 		"/>
+        <polygon id="shape8" class="snow" points="17,-5 13.4,-6.2 11,-11 8.6,-6.3 0,-11 -8.6,-6.3 -11,-11 -13.4,-6.2 -17,-5 -13.4,-3.8 
+        -11,1 -8.6,-3.7 0,1 8.6,-3.7 11,1 13.4,-3.8 		"/>
+        <polygon id="shape9" class="snow" points="33,-5 22,-11 13.4,-6.3 7.5,-11.3 -7.5,-11.3 -13.4,-6.3 -22,-11 -33,-5 -22,1 
+        -13.4,-3.7 -7.5,1.3 7.5,1.3 13.4,-3.7 22,1 		"/>
+        <polygon id="shape10" class="snow" points="18.6,-10.5 12.2,-10.5 10.1,-6.9 2.9,-9.9 5.5,-11.4 5.5,-17.8 0,-21 -5.5,-17.8 
+        -5.5,-11.4 -2.9,-9.9 -10.3,-6.9 -12.4,-10.5 -18.8,-10.5 -22,-5 -18.8,0.5 -12.4,0.5 -10.3,-3.1 0,1 10.1,-3.1 12.2,0.5 
+        18.6,0.5 21.8,-5 		"/>
+      </arm>
+    </defs>
+  </defs>
+  <rect class="sky" x="0px" y="0px" width="800px" height="460px" />
+</svg>
+<script src="application.js"></script>
+</body>
+</html>
